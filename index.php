@@ -17,7 +17,7 @@ $w = new Wechat(TOKEN, DEBUG);
 //首次验证，验证过以后可以删掉
 if (isset($_GET['echostr'])) {
     $w->valid();
-    exit(print_r($_REQUEST));
+    exit(print_r($_REQUEST.'www'));
 }
 
 //回复用户
@@ -29,8 +29,8 @@ exit();
 
 function reply_cb($request, $w)
 {
-	print_r($request);
-	print_r($w);
+	print_r($request.'aaa');
+	print_r($w.'aax');
     if ($w->get_msg_type() == "location") {
         return sprintf("你的位置：(%s, %s), 地址：%s",
                 $request['Location_X'], $request['Location_Y'], $request['Label']);
