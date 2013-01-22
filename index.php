@@ -16,9 +16,8 @@ $w = new Wechat(TOKEN, DEBUG);
 
 首次验证，验证过以后可以删掉
 if (isset($_GET['echostr'])) {
-	print_r($_REQUEST);
     $w->valid();
-    exit();
+    exit(print_r($_REQUEST));
 }
 
 //回复用户
